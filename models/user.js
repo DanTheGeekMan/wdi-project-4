@@ -7,10 +7,9 @@ const userSchema = new mongoose.Schema({
   firstName:    { type: String, trim: true },
   lastName:     { type: String, trim: true },
   email:        { type: String, unique: true, trim: true, required: true },
-  phone:        { type: String, trim: true },
   passwordHash: { type: String, required: true },
-  items:        [{ type: mongoose.Schema.Types.ObjectId, ref: "ClothesItem" }],
-  swishes:      [{ type: mongoose.Schema.Types.ObjectId, ref: "Transaction" }]
+  brewClubs:    [{ type: mongoose.Schema.Types.ObjectId, ref: "ClothesItem" }],
+  brewChoice:   {} // this will be an embedded collection
 }, {
   timestamps: true
 });
